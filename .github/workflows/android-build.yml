@@ -14,7 +14,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 18
-                - name: Create Base Archive
+      - name: Create Base Archive
         run: |
           echo '{"name":"voicepack","dependencies":{}}' > package.json
           echo "Placeholder read archive layout." > README.md
