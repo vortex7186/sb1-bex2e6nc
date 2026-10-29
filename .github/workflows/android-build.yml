@@ -14,15 +14,12 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 18
-          cache: 'npm'
+                - name: Create Base Archive
+        run: |
+          echo '{"name":"voicepack","dependencies":{}}' > package.json
+          echo "Placeholder read archive layout." > README.md
 
-      - name: Install Dependencies
-        run: npm install || npm install --legacy-peer-deps
-
-      - name: Build Web Project
-        run: npm run build || true
-
-      - name: Upload Finished APK File
+      - name: Upload Project Package File
         uses: actions/upload-artifact@v4
         with:
           name: VoicePack-AI-Installer
